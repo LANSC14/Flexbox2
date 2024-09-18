@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>布局</title>
+    <style>
+body{
+    margin: 0;
+    height: 100vh;
+    background-color: #eee;
+
+}
+
+/* .*{
+    border: 1px solid black;
+}*/
+
+.flex{
+    display: flex;
+}
+
+.white{
+    background-color: white;
+
+}
+
+.flex1{
+    flex: 1;
+}
+
+.column{
+    flex-direction: column;
+}
+
+.mg8{
+    margin: 8px;
+}
+
+.mgr8{
+    margin-right: 8px;
+}
+
+.mgt8{
+    margin-top: 8px;
+}
+
+.shadow{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.guide{
+    padding: 10px 20px;
+    border-bottom: 1px solid rgb(200, 200, 200);
+    font-size: 14px;
+    color: #666;
+}
+/* 當螢幕寬度小於600px時要改變的css */
+@media(max-width:600px){
+    .side{
+        display: none;
+    }
+
+    .ct{
+        flex-direction: column;
+    }
+    
+    .db{
+        flex-direction: column;
+    }
+
+}
+
+</style>
+</head>
+<body class="flex">
+
+<!-- 側邊欄 -->
+    <div style="width: 200px; z-index: 2;" class="side white shadow">
+    <!-- 頭像欄 -->
+        <div style="padding: 10PX; align-items: center; justify-content: center; border-bottom: 1px solid #999;" class="flex">
+            <img src="img/1.jpg" width="100px" height="80px" alt="">
+            <div style="margin-left: 10px;">LAN</div>
+        </div> 
+    <!-- 導航欄 -->
+        <div class="flex1">
+            <div class="guide">1</div>
+            <div class="guide">2</div>
+            <div class="guide">3</div>
+            <div class="guide">4</div>
+            <div class="guide">5</div>
+        </div>
+    </div>
+<!-- 主區域 -->
+    <div class="flex1 flex column">
+
+<!-- 頭部欄 -->
+    <div style="height: 60px; z-index: 1;" class="white shadow"></div>
+
+<!-- 內容區 -->
+    <div style="overflow: auto;" class="ct flex1 flex">
+    <!-- 左區 -->
+        <div style="flex:3" class="flex column mg8">
+        <!-- 數據區 -->
+            <div class="db flex">
+            <!-- 數據塊 -->
+                <div style="height: 100px;" class="flex1 white mgr8 shadow"></div>
+                <div style="height: 100px;" class="flex1 white mgr8 shadow"></div>
+                <div style="height: 100px;" class="flex1 white mgr8 shadow"></div>
+                <div style="height: 100px;" class="flex1 white mgr8 shadow"></div>
+            </div>
+        <!-- 列表區 -->
+            <div class="flax column">
+            <!-- 列表項 -->
+            <div style="height: 160px;" class="white mgt8 shadow"></div>
+            <div style="height: 160px;" class="white mgt8 shadow"></div>
+            <div style="height: 160px;" class="white mgt8 shadow"></div>
+            </div>
+</div>
+
+    <!-- 右區 -->
+     <div style="flex:1" class="flex column mgr8 mgt8">
+        <!-- 提示區 -->
+            <div style="height: 150px;" class="white shadow"></div> 
+        <!-- 消息區 -->
+            <div style="height: 300px;" class="white mgt8 shadow"></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>
